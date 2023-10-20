@@ -1,7 +1,8 @@
 
 import MovieSceneItem from './MovieSceneItem';
 
-/*function MovieSceneList({ data }) {
+function MovieSceneList({ data }) {
+    console.log(data);
     if (data.length === 0) {
         return <li className="">
             <p>No existe ningún título que coincida con.</p>
@@ -20,4 +21,4 @@ import MovieSceneItem from './MovieSceneItem';
     }
 };
 
-export default MovieSceneList;*/
+export default MovieSceneList;

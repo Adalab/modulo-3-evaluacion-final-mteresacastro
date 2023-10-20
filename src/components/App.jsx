@@ -1,7 +1,7 @@
 //imports dependencias, imagenes, componentes, stylos
 import Header from './Header';
 import Footer from './Footer';
-//import MovieSceneList from './MovieScenes/MovieSceneList';
+import MovieSceneList from './MovieScenes/MovieSceneList';
 
 import { useEffect, useState } from 'react';
 import { Route, Routes, Link } from 'react-router-dom';
@@ -21,9 +21,6 @@ function App() {
   useEffect(() => {
     callToApi().then((dataApi) => {
       setData(dataApi);
-      console.log(dataApi);
-
-
     });
   }, []);
 
@@ -32,7 +29,7 @@ function App() {
     <>
       <Header />
       <main>
-        {/*<MovieSceneList data={data}/>*/}
+        <MovieSceneList data={data} />
       </main>
       <Footer />
     </>
