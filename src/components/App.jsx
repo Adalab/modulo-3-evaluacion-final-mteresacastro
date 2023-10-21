@@ -16,15 +16,16 @@ function App() {
   // Variables de estado
 
   const [data, setData] = useState(ls.get("movies", []));
-  const [titleFilter, setTitleFilter] = useState('');
-  const [yearFilter, setYearFilter] = useState('Todos');
+  const [titleFilter, setTitleFilter] = useState("");
+  const [yearFilter, setYearFilter] = useState("");
 
   useEffect(() => {
     if (ls.get("movies", null) === null) {
       callToApi().then((dataApi) => {
+        const dataApiSort = dataApi.sort((x, y) => x.movie.localeCompare(y.movie)); //localeCompare retorna un número indicando si una cadena de carateres de referencia va antes, después o si es la misma que la cadena dada en orden alfabético.
+        console.log(dataApiSort);
         setData(dataApi);
         ls.set("movies", dataApi);
-        console.log(dataApi)
       });
     }
   }, []);
@@ -33,15 +34,35 @@ function App() {
     setTitleFilter(value);
   };
 
-  const filteredTitle = data.filter(title => title.movie.toLowerCase().includes(titleFilter));
+  const handleChangeSelect = (value) => {
+    setYearFilter(value);
+  };
 
+  const filteredTitle = data
+    .filter((title) => title.movie.toLowerCase().includes(titleFilter))
+    .filter((title) => {
+      if (yearFilter === "") {
+        return true;
+      } else {
+        return yearFilter === title.year
+      }
+    })
+
+  const getYears = () => {
+    const years = data.map((title) => title.year)
+    const uniquesYears = new Set(years);
+    const uniquesArray = [...uniquesYears];
+    const sortArray = uniquesArray.sort((function (a, b) { return a - b })); // sort ordena alfabeticamentem pero convierte los int en strings, por ello usamos esa funcion entre parentesis.
+    return sortArray;
+  };
 
   return (
     <>
       <Header />
       <main>
-        <Form titleFilter={titleFilter} handleChangeInput={handleChangeInput} yearFilter={yearFilter} />
+        <Form titleFilter={titleFilter} handleChangeInput={handleChangeInput} yearFilter={yearFilter} handleChangeSelect={handleChangeSelect} years={getYears()} />
         <MovieSceneList data={filteredTitle} titleFilter={titleFilter} />
+
       </main>
       <Footer />
     </>
