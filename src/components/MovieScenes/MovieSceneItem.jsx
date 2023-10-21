@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import MovieSceneDetails from './MovieSceneDetails';
 
-const MovieSceneItem = ({ poster, movie, director, character, fullLine, year, audio }) => {
+const MovieSceneItem = ({ eachMovie }) => {
     return (
         <Link className="movie" to={"./"} >
-            <img src={poster} alt={`${movie} poster`} />
-            <h3>Película: {movie} Año: {year}</h3>
-            <p>{fullLine}</p>
+            <img src={eachMovie.poster} alt={`${eachMovie.movie} poster`} />
+            <h3>Película: {eachMovie.movie}</h3>
+            <p>Año: {eachMovie.year}</p>
+            <p>Frase: {eachMovie.fullLine}</p>
         </Link>
 
     );

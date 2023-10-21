@@ -2,10 +2,10 @@ import wow from '../images/wow.ico'
 
 const Footer = () => {
     return (
-        <div>
+        <footer>
             <img src={wow} alt="icono letras WOW!" />
             <span>Owen Wilson 2023</span>
-        </div>
+        </footer>
     );
 };
 

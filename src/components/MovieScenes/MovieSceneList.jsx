@@ -1,11 +1,11 @@
 
 import MovieSceneItem from './MovieSceneItem';
 
-function MovieSceneList({ data }) {
+function MovieSceneList({ data, titleFilter }) {
     console.log(data);
     if (data.length === 0) {
         return <li className="">
-            <p>No existe ningún título que coincida con.</p>
+            <p>No existe ningún título que coincida con {titleFilter}.</p>
         </li>;
     } else {
         const allMovies = data.map((eachMovie, index) => {
@@ -15,9 +15,13 @@ function MovieSceneList({ data }) {
                 </li>
             );
         });
-        return <ul className="">
-            {allMovies}
-        </ul>
+        return (
+            <section>
+                <ul className="">
+                    {allMovies}
+                </ul>
+            </section>
+        )
     }
 };
 
