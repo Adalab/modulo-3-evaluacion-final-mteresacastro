@@ -39,14 +39,9 @@ function App() {
   };
 
   const filteredTitle = data
-    .filter((title) => title.movie.toLowerCase().includes(titleFilter))
-    .filter((title) => {
-      if (yearFilter === "") {
-        return true;
-      } else {
-        return yearFilter === title.year
-      }
-    })
+    .filter((title) => title.movie.toLowerCase().includes(titleFilter.toLowerCase()));
+
+  const filteredYear = filteredTitle.filter((title) => yearFilter ? title.year === Number(yearFilter) : true); //el dato año esta en int, con el método Number cambiamos de string a int para cumplir la igualdad absoluta.
 
   const getYears = () => {
     const years = data.map((title) => title.year)
@@ -61,7 +56,7 @@ function App() {
       <Header />
       <main>
         <Form titleFilter={titleFilter} handleChangeInput={handleChangeInput} yearFilter={yearFilter} handleChangeSelect={handleChangeSelect} years={getYears()} />
-        <MovieSceneList data={filteredTitle} titleFilter={titleFilter} />
+        <MovieSceneList filteredYear={filteredYear} titleFilter={titleFilter} />
 
       </main>
       <Footer />
