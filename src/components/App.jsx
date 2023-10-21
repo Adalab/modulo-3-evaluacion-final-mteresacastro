@@ -1,15 +1,17 @@
 //imports dependencias, imagenes, componentes, stylos
+import { useEffect, useState } from 'react';
+import { Route, Routes, Link } from 'react-router-dom';
+
+import callToApi from '../services/api';
+import ls from '../services/localStorage';
+
+import '../styles/App.scss'
+
 import Header from './Header';
 import Footer from './Footer';
 import MovieSceneList from './MovieScenes/MovieSceneList';
+import MovieSceneDetails from './MovieScenes/MovieSceneDetails';
 import Form from './Form/Form';
-
-import { useEffect, useState } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
-import callToApi from '../services/api';
-import ls from '../services/localStorage';
-import '../styles/App.scss'
-
 
 function App() {
 
@@ -23,8 +25,8 @@ function App() {
     if (ls.get("movies", null) === null) {
       callToApi().then((dataApi) => {
         const dataApiSort = dataApi.sort((x, y) => x.movie.localeCompare(y.movie)); //localeCompare retorna un número indicando si una cadena de carateres de referencia va antes, después o si es la misma que la cadena dada en orden alfabético.
-        console.log(dataApiSort);
-        setData(dataApi);
+        setData(dataApiSort);
+        console.log(dataApi);
         ls.set("movies", dataApi);
       });
     }
@@ -51,14 +53,38 @@ function App() {
     return sortArray;
   };
 
+  /*const createId = () => {
+    for (let i = 0; i < data.length; i++) {
+      data[i].id = i;
+    }
+
+  };*/
+
   return (
     <>
       <Header />
       <main>
-        <Form titleFilter={titleFilter} handleChangeInput={handleChangeInput} yearFilter={yearFilter} handleChangeSelect={handleChangeSelect} years={getYears()} />
-        <MovieSceneList filteredYear={filteredYear} titleFilter={titleFilter} />
-
-      </main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Form titleFilter={titleFilter} handleChangeInput={handleChangeInput} yearFilter={yearFilter} handleChangeSelect={handleChangeSelect} years={getYears()} />
+                <MovieSceneList filteredYear={filteredYear} titleFilter={titleFilter} />
+              </>
+            }
+          />
+          <Route
+            path="/details/:idMovie"
+            element={
+              <>
+                <MovieSceneDetails data={data} />
+                <Link to="/">Volver</Link>
+              </>
+            }
+          />
+        </Routes>
+      </main >
       <Footer />
     </>
   )
