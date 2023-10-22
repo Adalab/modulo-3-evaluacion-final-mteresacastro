@@ -1,9 +1,8 @@
 import { Link } from 'react-router-dom';
-import MovieSceneDetails from './MovieSceneDetails';
 
 const MovieSceneItem = ({ eachMovie }) => {
     return (
-        <Link className="movie" to={"/details/:idMovie"} >
+        <Link className="movie" to={"/details/" + eachMovie.id} >
             <img className="movie__poster" src={eachMovie.poster} alt={`${eachMovie.movie} poster`} />
             <h3>Película: {eachMovie.movie}</h3>
             <p>Año: {eachMovie.year}</p>

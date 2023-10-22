@@ -1,6 +1,7 @@
 //imports dependencias, imagenes, componentes, stylos
 import { useEffect, useState } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link, matchPath } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
 import callToApi from '../services/api';
 import ls from '../services/localStorage';
@@ -26,7 +27,6 @@ function App() {
       callToApi().then((dataApi) => {
         const dataApiSort = dataApi.sort((x, y) => x.movie.localeCompare(y.movie)); //localeCompare retorna un número indicando si una cadena de carateres de referencia va antes, después o si es la misma que la cadena dada en orden alfabético.
         setData(dataApiSort);
-        console.log(dataApi);
         ls.set("movies", dataApi);
       });
     }
@@ -43,7 +43,7 @@ function App() {
   const filteredTitle = data
     .filter((title) => title.movie.toLowerCase().includes(titleFilter.toLowerCase()));
 
-  const filteredYear = filteredTitle.filter((title) => yearFilter ? title.year === Number(yearFilter) : true); //el dato año esta en int, con el método Number cambiamos de string a int para cumplir la igualdad absoluta.
+  const filteredYear = filteredTitle.filter((title) => yearFilter ? title.year === parseInt(yearFilter) : true); //el dato año esta en int, con el método Number o parseInt cambiamos de string a int para cumplir la igualdad estricta.
 
   const getYears = () => {
     const years = data.map((title) => title.year)
@@ -53,12 +53,13 @@ function App() {
     return sortArray;
   };
 
-  /*const createId = () => {
-    for (let i = 0; i < data.length; i++) {
-      data[i].id = i;
-    }
+  const { pathname } = useLocation();
+  const routeData = matchPath('/details/:id', pathname);
+  const movieId = routeData !== null ? routeData.params.id : "";
 
-  };*/
+  const movieData = data.find((movie) => movie.id === parseInt(movieId)); //tengo que pasarlo a int, poruqe si no, no se da la igualdad estricta
+  console.log(movieData);
+
 
   return (
     <>
@@ -78,7 +79,7 @@ function App() {
             path="/details/:idMovie"
             element={
               <>
-                <MovieSceneDetails data={data} />
+                <MovieSceneDetails data={movieData} />
                 <Link to="/">Volver</Link>
               </>
             }
