@@ -1,8 +1,8 @@
 
 .header{
     width: 100%;
-    height: 18rem;
-    background-color: #9bc1bc;
+    height: 20%;
+    background:radial-gradient(circle, #ccf6f0 0%, #9bc1bc 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,9 +18,8 @@
         }
     }
     &__h1{
-        @include textStyle($font-family-Acme, 300, 3rem, #f4f1bb);
+        @include textStyle($font-family-Averia, 300, 3rem, #36c9c6);
         text-shadow: 1px 1px 1px rgb(23, 59, 33);;
-        transform: translateY(-40%);
     }
     
 

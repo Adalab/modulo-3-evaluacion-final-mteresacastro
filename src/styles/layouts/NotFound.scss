@@ -3,12 +3,18 @@
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    gap: 6rem;
+    gap: 2rem;
     &__h1{
-        @include textStyle($font-family-Acme, 300, 3rem, #b70635);
+        @include textStyle($font-family-Acme, 300, 2rem, #b70635);
+        padding: 1rem 2rem;
+        text-align: center;
+        
+        @media all and (min-width:720px){
+            @include textStyle($font-family-Acme, 300, 3rem, #b70635);
+        }
     }
     &__img{
         width: 20rem;
-        margin-bottom: 6rem;
+        margin-bottom:2rem;
     }
 }

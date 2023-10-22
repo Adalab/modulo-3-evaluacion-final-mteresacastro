@@ -1,21 +1,28 @@
 .footer{
-    height: 10rem;
-    background-color: #9bc1bc;
+    background: radial-gradient(circle, #858686 0%, #4b4c4c 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    padding: 0.5rem;
+    margin-top: auto;
+    display: relative;
+    width: 100%;
+    height: 13vh;
+
     &__img{
-      height: 8rem;
+      height: 5rem;
+      width: 5rem;
       background-color:  rgb(220, 249, 242);
       box-shadow: 2px 2px 4px rgb(23, 59, 33);
-      border-radius: 50%;
+      border-radius: 50px;
       padding: 1rem;
       &--Owen{
-        height: 6rem;
+        height: 3rem;
       }
     }
     &__text{
-        @include textStyle($font-family-Averia, 300, 1.2rem, #f4f1bb);
+        @include textStyle($font-family-Averia, 300, 1.5rem, #36c9c6);
+        text-shadow: 1px 1px 1px rgb(23, 59, 33);;
     }
 }
