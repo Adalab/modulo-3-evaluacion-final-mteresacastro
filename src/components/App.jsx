@@ -57,7 +57,8 @@ function App() {
   const routeData = matchPath('/details/:id', pathname);
   const movieId = routeData !== null ? routeData.params.id : "";
 
-  const movieData = data.find((movie) => movie.id === parseInt(movieId)); //tengo que pasarlo a int, poruqe si no, no se da la igualdad estricta
+  //crear aqui una funcion para que si el id no existe, ponga "la escena que buscas no existe"
+  const movieData = data.find((movie) => movie.id === parseInt(movieId)); //tengo que pasarlo a int, porque si no, no se da la igualdad estricta
   console.log(movieData);
 
 
