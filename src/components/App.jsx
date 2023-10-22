@@ -13,13 +13,14 @@ import Footer from './Footer';
 import MovieSceneList from './MovieScenes/MovieSceneList';
 import MovieSceneDetails from './MovieScenes/MovieSceneDetails';
 import Form from './Form/Form';
+import NotFound from './NotFound';
 
 function App() {
 
   // Variables de estado
 
   const [data, setData] = useState(ls.get("movies", []));
-  const [titleFilter, setTitleFilter] = useState("");
+  const [titleFilter, setTitleFilter] = useState(ls.get("search", ""));
   const [yearFilter, setYearFilter] = useState("");
 
   useEffect(() => {
@@ -83,6 +84,12 @@ function App() {
                 <MovieSceneDetails data={movieData} />
                 <Link to="/">Volver</Link>
               </>
+            }
+          />
+          <Route
+            path="*"
+            element={
+              <NotFound />
             }
           />
         </Routes>

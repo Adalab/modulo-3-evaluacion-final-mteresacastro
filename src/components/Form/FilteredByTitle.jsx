@@ -1,9 +1,12 @@
-import React from 'react';
+import ls from '../../services/localStorage';
 
 function FilteredByTitle({ titleFilter, handleChangeInput }) {
 
     const handleInput = (ev) => {
-        handleChangeInput(ev.target.value);
+        const title = ev.target.value;
+        ls.set("search", title);
+
+        handleChangeInput(title);
     }
 
     return (
