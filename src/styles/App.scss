@@ -1,7 +1,25 @@
-//para cada componente 
+@import 'core/variables.scss';
+@import 'core/reset.scss';
+@import 'layouts/Header.scss';
+//@import 'layouts/Form.scss';
+//@import 'layouts/FilteredByTitle.scss';
+//@import 'layouts/FilteredByYear.scss';
+@import 'layouts/Footer.scss';
 
-//importa cada layout
-//@import '../styles/nombre-de-fichero.scss';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .movie__poster, .imgDetails{
     width: 200px;

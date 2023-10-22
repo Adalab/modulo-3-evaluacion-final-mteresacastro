@@ -1,0 +1,21 @@
+.footer{
+    height: 10rem;
+    background-color: #9bc1bc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    &__img{
+      height: 8rem;
+      background-color:  rgb(220, 249, 242);
+      box-shadow: 2px 2px 4px rgb(23, 59, 33);
+      border-radius: 50%;
+      padding: 1rem;
+      &--Owen{
+        height: 6rem;
+      }
+    }
+    &__text{
+        @include textStyle($font-family-Averia, 300, 1.2rem, #f4f1bb);
+    }
+}

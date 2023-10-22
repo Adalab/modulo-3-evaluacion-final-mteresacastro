@@ -1,14 +1,13 @@
+import '../styles/App.scss';
 import wowOwen from '../images/wowOwen.png'
-import wow from '../images/wow.ico'
 
 function Header() {
     return (
-        <header>
-            <div className="imageDiv">
-                <img src={wowOwen} alt="imagen de la cara de Owen Wilson" />
-                <img src={wow} alt="icono letras WOW!" />
+        <header className="header">
+            <div className="header__img">
+                <img className="header__img--Owen" src={wowOwen} alt="imagen de la cara de Owen Wilson" />
             </div>
-            <h1>Owen Wilson`s WOW </h1>
+            <h1 className="header__h1">Owen Wilson`s WOW </h1>
         </header>
     );
 }
