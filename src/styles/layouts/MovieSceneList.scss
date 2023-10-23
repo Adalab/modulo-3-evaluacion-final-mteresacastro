@@ -4,9 +4,13 @@
     padding-top: 10rem; 
     padding-left: 2rem;
     padding-right: 2rem;  
+    @media all and (min-width:1440px){
+        padding-bottom: 39.5rem;
+    }
 }
 .section__list{
     background-color: $tertiary-color;
+    width: 100%;
     &--ul{
         display: grid;
         grid-template-columns: 1fr;

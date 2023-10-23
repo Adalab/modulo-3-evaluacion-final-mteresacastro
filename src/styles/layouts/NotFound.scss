@@ -15,8 +15,11 @@
         }
     }
     &__img{
-        width: 20rem;
+        width: 200px;
         margin-bottom: 8.5rem;
         padding-top: 4rem;
+        @media all and (min-width:720px){
+            width: 300px;
+        }
     }
 }
