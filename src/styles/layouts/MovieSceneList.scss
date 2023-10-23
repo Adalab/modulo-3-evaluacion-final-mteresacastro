@@ -1,6 +1,9 @@
 .error-msg{
-    @include textStyle($font-family-Acme, 300, 2rem, $color-icons);
-    padding: 4rem;   
+    @include textStyle($font-family-Acme, 300, 3rem, $color-icons);
+    padding-bottom: 27.5rem;
+    padding-top: 10rem; 
+    padding-left: 2rem;
+    padding-right: 2rem;  
 }
 .section__list{
     background-color: $tertiary-color;

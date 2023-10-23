@@ -63,7 +63,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="main">
         <Routes>
           <Route
             path="/"
@@ -79,7 +79,7 @@ function App() {
             element={
               <>
                 <MovieSceneDetails data={movieData} />
-                <Link to="/">Volver</Link>
+                <Link className="back" to="/">Volver</Link>
               </>
             }
           />

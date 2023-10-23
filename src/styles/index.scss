@@ -1,2 +1,25 @@
 
 //estilos generales
+
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main{
+   min-height: 65vh;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+  }
+
+  .back{
+    font-family:'Acme', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: rgb(199, 10, 60);
+    margin: 2rem;
+  }

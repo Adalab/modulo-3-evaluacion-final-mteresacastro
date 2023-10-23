@@ -1,0 +1,49 @@
+.divComplete{
+    @include centerTotalColumns;
+    background-color: $font-color-three ;
+    width: 31rem;
+    margin-top: 1.75rem;
+    margin-bottom: 1.75rem;
+    border-radius: 32px;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 5px solid $main-color;
+    @media all and (min-width:768px){
+        flex-direction: row;
+        width: 70rem;
+    }
+    
+}
+
+.imgDetails{
+    width: 250px;
+    border-radius: 4rem;
+    padding: 2rem;
+    @media all and (min-width:768px){
+        width: 300px;
+    }  
+}
+    
+.divInfo{
+    @include textStyle($font-family-Averia, 700, 3rem, $font-color-one);
+    @include centerTotalColumns;
+    gap: 1rem;
+
+    &__movie{
+        font-size: 3.5rem;
+    }
+    &__line{
+        font-size: 2.5rem;
+    }
+    &__audio{
+        margin-top: 1.5rem;
+    }
+
+}
+
+.iconDetails{
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    color: $secondary-color;
+    font-size: 3rem;
+}
