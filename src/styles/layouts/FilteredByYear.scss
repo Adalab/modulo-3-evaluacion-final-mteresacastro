@@ -1,0 +1,19 @@
+.sectionForm__form--label{
+    @include textStyle($font-family-Averia, 300, 1.5rem, white);
+    padding: 0.5rem;
+}
+
+.sectionForm__form--select{
+    @include textStyle(sans-serif, 300, 1.3rem, $font-color-one); 
+    height: 2.8rem;
+    padding: 0.4rem;
+    margin: 0.4rem;
+    border-radius: 1.5rem;
+    border-color:aquamarine;
+    background-color: white;
+    outline: none;
+   
+    &-option{
+        @include textStyle(sans-serif, 300, 1.3rem, $font-color-one); 
+    }
+}

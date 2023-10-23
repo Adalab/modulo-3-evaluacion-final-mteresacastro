@@ -1,3 +1,4 @@
+import '../../styles/App.scss';
 import ls from '../../services/localStorage';
 
 function FilteredByTitle({ titleFilter, handleChangeInput }) {
@@ -11,9 +12,9 @@ function FilteredByTitle({ titleFilter, handleChangeInput }) {
 
     return (
         <>
-            <label htmlFor="title" className='form__label'>Título: </label>
+            <label className="sectionForm__form--label" htmlFor="title">Título: </label>
             <input
-                className='form__input'
+                className="sectionForm__form--input"
                 type="text"
                 value={titleFilter}
                 onChange={handleInput}

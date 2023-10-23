@@ -1,4 +1,5 @@
-import React from 'react';
+import '../../styles/App.scss';
+
 import FilteredByTitle from './FilteredByTitle';
 import FilteredByYear from './FilteredByYear';
 
@@ -9,14 +10,14 @@ function Form({ titleFilter, handleChangeInput, yearFilter, handleChangeSelect, 
     }
 
     return (
-        <section>
-            <form action="" className="form" onSubmit={handleSubmit}>
-                <fieldset>
-                    <legend>Filtrar por nombre de película</legend>
+        <section className="sectionForm">
+            <form action="" className="sectionForm__form" onSubmit={handleSubmit}>
+                <fieldset className="fieldset">
+                    <legend className="sectionForm__form--legend" >Filtrar por nombre de película</legend>
                     <FilteredByTitle titleFilter={titleFilter} handleChangeInput={handleChangeInput} />
                 </fieldset>
-                <fieldset>
-                    <legend>Filtrar por año de estreno</legend>
+                <fieldset className="fieldset">
+                    <legend className="sectionForm__form--legend">Filtrar por año de estreno</legend>
                     <FilteredByYear yearFilter={yearFilter} handleChangeSelect={handleChangeSelect} years={years} />
                 </fieldset>
             </form>
