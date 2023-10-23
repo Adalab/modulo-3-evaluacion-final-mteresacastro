@@ -6,7 +6,6 @@
         flex-wrap: wrap;
         gap :2rem;
         background-color: $secondary-color;
-        border: 3px solid $main-color;
         @media all and (min-width:768px){
             gap: 6rem;
         }

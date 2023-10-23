@@ -12,5 +12,5 @@
     background-color: white;
     outline: none;
   
-    @include textStyle(sans-serif, 300, 1.3rem, $font-color-one);
+    @include textStyle(sans-serif, 300, 1.3rem, $font-color-three);
 }

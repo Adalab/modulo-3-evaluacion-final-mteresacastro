@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 const MovieSceneDetails = ({ data }) => {
     console.log(data)
@@ -17,4 +18,7 @@ const MovieSceneDetails = ({ data }) => {
     );
 };
 
+MovieSceneDetails.propTypes = {
+    data: PropTypes.object,
+};
 export default MovieSceneDetails;

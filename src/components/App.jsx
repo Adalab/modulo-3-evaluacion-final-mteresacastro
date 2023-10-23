@@ -45,6 +45,7 @@ function App() {
     .filter((title) => title.movie.toLowerCase().includes(titleFilter.toLowerCase()));
 
   const filteredYear = filteredTitle.filter((title) => yearFilter ? title.year === parseInt(yearFilter) : true); //el dato año esta en int, con el método Number o parseInt cambiamos de string a int para cumplir la igualdad estricta.
+  console.log(filteredYear);
 
   const getYears = () => {
     const years = data.map((title) => title.year)

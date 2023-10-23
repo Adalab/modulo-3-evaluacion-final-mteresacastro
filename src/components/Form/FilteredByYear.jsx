@@ -1,3 +1,4 @@
+import '../../styles/App.scss';
 
 function FilteredByYear({ yearFilter, handleChangeSelect, years }) {
 

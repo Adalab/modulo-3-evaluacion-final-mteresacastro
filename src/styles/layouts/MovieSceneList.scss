@@ -1,0 +1,40 @@
+.error-msg{
+    @include textStyle($font-family-Acme, 300, 2rem, $color-icons);
+    padding: 4rem;   
+}
+.section__list{
+    background-color: $tertiary-color;
+    &--ul{
+        display: grid;
+        grid-template-columns: 1fr;
+        flex-wrap: wrap;
+        padding: 3rem;
+        gap: 1rem;
+        @media all and (min-width:768px){
+            grid-template-columns: 1fr 1fr;
+        }
+        @media all and (min-width:1024px){
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+        &-li{
+            background-color: $font-color-one;
+            border-radius: 15px;
+            list-style: none;
+            text-align: center;
+            padding: 2rem;
+            @include textStyle($font-family-Averia, 700, 3rem, $secondary-color);
+            a:link, a:visited, a:active {
+                text-decoration:none;
+            }
+            a:visited{
+                color: $font-color-visited
+            }
+            a:link{
+                color: $secondary-color;
+            }
+            a:active{
+                color: $font-color-two;
+            }
+        }
+    }
+}

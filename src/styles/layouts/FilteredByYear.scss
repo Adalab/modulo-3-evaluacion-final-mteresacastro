@@ -4,7 +4,7 @@
 }
 
 .sectionForm__form--select{
-    @include textStyle(sans-serif, 300, 1.3rem, $font-color-one); 
+    @include textStyle(sans-serif, 300, 1.3rem, $font-color-three); 
     height: 2.8rem;
     padding: 0.4rem;
     margin: 0.4rem;
@@ -14,6 +14,6 @@
     outline: none;
    
     &-option{
-        @include textStyle(sans-serif, 300, 1.3rem, $font-color-one); 
+        @include textStyle(sans-serif, 300, 1.3rem, $font-color-three); 
     }
 }

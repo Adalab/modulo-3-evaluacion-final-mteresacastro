@@ -2,11 +2,18 @@
 
 @mixin centerTotal {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+};
+
+@mixin centerTotalColumns {
+    display: flex;
+    justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
 };
-  
   
 @mixin textStyle($fontFamily, $fontWeight, $fontSize, $color) {
     font-family: $fontFamily;
@@ -25,7 +32,9 @@ $font-family-Averia: 'Averia Sans Libre', sans-serif;
 
 $main-color: #9bc1bc;
 $secondary-color: #36c9c6;
-$tertiary-color: #ed6a5a;
-$font-color-one: rgb(18, 18, 28);
-$font-color-two: rgb(180, 6, 55);
-$color-icons: rgb(104, 1, 30);
+$tertiary-color: #ccf6f0;
+$font-color-one: white;
+$font-color-two: #ed6a5a;
+$font-color-three: rgb(1, 99, 99);
+$font-color-visited: rgb(78, 4, 91);
+$color-icons: rgb(199, 10, 60);

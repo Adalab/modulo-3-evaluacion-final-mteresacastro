@@ -1,20 +1,22 @@
 .notfound{
+    
     display:flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
     gap: 2rem;
     &__h1{
-        @include textStyle($font-family-Acme, 300, 2rem, #b70635);
-        padding: 1rem 2rem;
+        @include textStyle($font-family-Acme, 300, 2rem, $color-icons);
+        padding: 3rem 2rem;
         text-align: center;
         
         @media all and (min-width:720px){
-            @include textStyle($font-family-Acme, 300, 3rem, #b70635);
+            @include textStyle($font-family-Acme, 300, 3rem, $color-icons);
         }
     }
     &__img{
         width: 20rem;
-        margin-bottom:2rem;
+        margin-bottom:6rem;
+        padding-top: 3rem;
     }
 }
