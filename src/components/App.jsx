@@ -26,7 +26,7 @@ function App() {
   useEffect(() => {
     if (ls.get("movies", null) === null) {
       callToApi().then((dataApi) => {
-        const dataApiSort = dataApi.sort((x, y) => x.movie.localeCompare(y.movie)); //localeCompare retorna un número indicando si una cadena de carateres de referencia va antes, después o si es la misma que la cadena dada en orden alfabético.
+        const dataApiSort = dataApi.sort(({ movie: a }, { movie: b }) => a.localeCompare(b)); //localeCompare retorna un número indicando si una cadena de carateres de referencia va antes, después o si es la misma que la cadena dada en orden alfabético.
         setData(dataApiSort);
         ls.set("movies", dataApi);
       });
@@ -58,7 +58,7 @@ function App() {
   const { pathname } = useLocation();
   const routeData = matchPath('/details/:id', pathname);
   const movieId = routeData !== null ? routeData.params.id : "";
-  const movieData = data.find((movie) => movie.id === parseInt(movieId)); //tengo que pasarlo a int, porque si no, no se da la igualdad estricta
+  const movieData = data.find((movie) => movie.id === movieId);
 
   return (
     <>

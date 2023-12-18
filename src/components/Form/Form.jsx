@@ -11,7 +11,7 @@ function Form({ titleFilter, handleChangeInput, yearFilter, handleChangeSelect, 
 
     return (
         <section className="sectionForm">
-            <form action="" className="sectionForm__form" onSubmit={handleSubmit}>
+            <form className="sectionForm__form" onSubmit={handleSubmit}>
                 <fieldset className="fieldset">
                     <legend className="sectionForm__form--legend" >Filtrar por nombre de película</legend>
                     <FilteredByTitle titleFilter={titleFilter} handleChangeInput={handleChangeInput} />

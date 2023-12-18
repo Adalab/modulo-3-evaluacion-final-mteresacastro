@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 const MovieSceneDetails = ({ data }) => {
     console.log(data)
+
     return (
         <div className="divComplete">
             <img className="imgDetails" src={data.poster} alt={`${data.movie} poster`} />
@@ -32,6 +33,15 @@ const MovieSceneDetails = ({ data }) => {
 };
 
 MovieSceneDetails.propTypes = {
-    data: PropTypes.object,
+    data: PropTypes.shape({
+        poster: PropTypes.string,
+        movie: PropTypes.string,
+        director: PropTypes.string,
+        character: PropTypes.string,
+        fullLine: PropTypes.string,
+        year: PropTypes.number,
+        audio: PropTypes.string,
+        id: PropTypes.string,
+    })
 };
 export default MovieSceneDetails;

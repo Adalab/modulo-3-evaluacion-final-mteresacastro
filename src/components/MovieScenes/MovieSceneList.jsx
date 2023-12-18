@@ -26,7 +26,7 @@ function MovieSceneList({ filteredYear, titleFilter }) {
 }
 
 MovieSceneList.propTypes = {
-    filteredYear: PropTypes.array,
+    filteredYear: PropTypes.arrayOf(PropTypes.object),
     titleFilter: PropTypes.string,
 };
 

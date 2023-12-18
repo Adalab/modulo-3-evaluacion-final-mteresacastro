@@ -1,14 +1,17 @@
 import '../../styles/App.scss';
 import ls from '../../services/localStorage';
+import { useEffect } from 'react';
 
 function FilteredByTitle({ titleFilter, handleChangeInput }) {
 
     const handleInput = (ev) => {
         const title = ev.target.value;
-        ls.set("search", title);
-
         handleChangeInput(title);
     }
+
+    useEffect(() => {
+        ls.set('search', titleFilter);
+    }, [titleFilter]);
 
     return (
         <>

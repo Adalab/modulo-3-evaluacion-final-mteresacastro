@@ -8,7 +8,7 @@ function FilteredByYear({ yearFilter, handleChangeSelect, years }) {
 
     const renderCitiesOptions = () => {
 
-        return years.map((year, i) => <option key={i} value={year} className="sectionForm__form--select-option" >{year}</option>);
+        return years.map((year) => <option key={year} value={year} className="sectionForm__form--select-option" >{year}</option>);
 
     };
 

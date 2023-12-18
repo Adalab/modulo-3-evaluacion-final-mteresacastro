@@ -1,6 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
 
-
 // Fichero src/services/api.js
 const callToApi = () => {
   // Llamamos a la API
@@ -22,6 +21,10 @@ const callToApi = () => {
       });
 
       return cleanData;
+    })
+
+    .catch((error) => {
+      console.error('Error fetching data:', error);
     });
 };
 

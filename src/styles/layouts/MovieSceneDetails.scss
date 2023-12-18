@@ -27,6 +27,7 @@
 .divInfo{
     @include textStyle($font-family-Averia, 700, 3rem, $font-color-one);
     @include centerTotalColumns;
+
     gap: 1rem;
 
     &__movie{
