@@ -13,11 +13,11 @@ function Form({ titleFilter, handleChangeInput, yearFilter, handleChangeSelect, 
         <section className="sectionForm">
             <form className="sectionForm__form" onSubmit={handleSubmit}>
                 <fieldset className="fieldset">
-                    <legend className="sectionForm__form--legend" >Filtrar por nombre de película</legend>
+                    <legend className="sectionForm__form--legend" ></legend>
                     <FilteredByTitle titleFilter={titleFilter} handleChangeInput={handleChangeInput} />
                 </fieldset>
                 <fieldset className="fieldset">
-                    <legend className="sectionForm__form--legend">Filtrar por año de estreno</legend>
+                    <legend className="sectionForm__form--legend"></legend>
                     <FilteredByYear yearFilter={yearFilter} handleChangeSelect={handleChangeSelect} years={years} />
                 </fieldset>
             </form>

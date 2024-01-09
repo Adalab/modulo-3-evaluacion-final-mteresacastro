@@ -21,10 +21,11 @@
             grid-template-columns: 1fr 1fr;
         }
         @media all and (min-width:1024px){
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
         }
         &-li{
-            background-color: $font-color-one;
+            width: 35rem;
+            background-color: #4649491f;
             border-radius: 15px;
             list-style: none;
             text-align: center;
